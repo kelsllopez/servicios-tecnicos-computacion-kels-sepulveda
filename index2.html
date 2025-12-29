@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Folleto Servicios Computacionales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Estilos específicos para impresión */
+        @media print {
+            body {
+                background-color: white;
+                padding: 0;
+            }
+            .no-print {
+                display: none;
+            }
+            #flyer {
+                box-shadow: none;
+                width: 100% !important;
+                max-width: 100% !important;
+                flex-direction: row !important; /* Forzar horizontal en impresión */
+            }
+            /* Forzar impresión de fondos */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+
+        .service-card {
+            transition: transform 0.2s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Contenedor Principal del Folleto - Ahora más ancho (max-w-4xl) y con Flex para 2 columnas -->
+    <div id="flyer" class="bg-white w-full max-w-4xl overflow-hidden rounded-3xl shadow-2xl flex flex-col md:flex-row">
+        
+        <!-- COLUMNA IZQUIERDA: Marca y Contacto (Lo importante) -->
+        <div class="relative w-full md:w-2/5 bg-gradient-to-br from-blue-600 via-indigo-600 to-purple-700 text-white p-8 flex flex-col justify-between items-center text-center z-10">
+            
+            <!-- Decoración de fondo solo en lado izquierdo -->
+            <div class="absolute top-0 left-0 -ml-10 -mt-10 w-40 h-40 rounded-full bg-white opacity-10"></div>
+            <div class="absolute bottom-0 right-0 -mr-10 -mb-10 w-40 h-40 rounded-full bg-purple-900 opacity-20"></div>
+
+            <!-- Contenido Superior Izquierdo -->
+            <div class="mt-4 relative z-10">
+                <div class="mb-6 inline-block bg-white/10 p-4 rounded-full backdrop-blur-sm border border-white/20">
+                    <i class="fa-solid fa-laptop-code text-6xl text-white"></i>
+                </div>
+                <!-- Nombre actualizado -->
+                <h1 class="text-2xl md:text-3xl font-extrabold uppercase tracking-wide leading-tight mb-2">
+                    Servicios<br>
+                    <span class="text-3xl md:text-4xl">Kels Sepulveda</span>
+                </h1>
+                <p class="text-blue-100 font-medium text-lg">Servicio Técnico & Web</p>
+                <div class="mt-6 inline-block bg-white text-indigo-700 px-5 py-2 rounded-full text-sm font-bold shadow-lg uppercase tracking-wider">
+                    ¡Rápido y Garantizado!
+                </div>
+            </div>
+
+            <!-- Información de Contacto (Ahora a la izquierda para destacar) -->
+            <div class="mt-8 w-full relative z-10">
+                <div class="bg-white/10 backdrop-blur-md border border-white/20 p-4 rounded-2xl">
+                    <p class="text-xs text-blue-100 uppercase tracking-widest mb-1">Agenda tu hora</p>
+                    <div class="flex items-center justify-center gap-2 text-2xl font-bold">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>+56 9 6560 4235</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COLUMNA DERECHA: Lista de Servicios -->
+        <div class="w-full md:w-3/5 bg-white p-6 md:p-8 relative">
+            
+            <!-- Decoración sutil fondo derecho -->
+            <div class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-blue-50 opacity-50 pointer-events-none"></div>
+
+            <h2 class="text-gray-400 text-xs font-bold uppercase tracking-widest mb-6 border-b border-gray-100 pb-2">Lista de Precios</h2>
+
+            <div class="space-y-4 relative z-10">
+                <!-- Servicio 1 -->
+                <div class="service-card flex items-center bg-gray-50 border-l-4 border-blue-500 rounded-lg p-3 group hover:bg-white hover:shadow-md transition-all">
+                    <div class="text-blue-500 mr-4 text-xl w-8 text-center">
+                        <i class="fa-solid fa-microchip"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-gray-800 text-md">Instalación de Hardware</h3>
+                    </div>
+                    <div class="text-right">
+                        <span class="block text-xl font-extrabold text-blue-600">$10.000</span>
+                    </div>
+                </div>
+
+                <!-- Servicio 2 -->
+                <div class="service-card flex items-center bg-gray-50 border-l-4 border-indigo-500 rounded-lg p-3 group hover:bg-white hover:shadow-md transition-all">
+                    <div class="text-indigo-500 mr-4 text-xl w-8 text-center">
+                        <i class="fa-solid fa-compact-disc"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-gray-800 text-md">Formateo / Sistema</h3>
+                    </div>
+                    <div class="text-right">
+                        <span class="block text-xl font-extrabold text-indigo-600">$15.000</span>
+                    </div>
+                </div>
+
+                <!-- Servicio 3 -->
+                <div class="service-card flex items-center bg-gray-50 border-l-4 border-purple-500 rounded-lg p-3 group hover:bg-white hover:shadow-md transition-all">
+                    <div class="text-purple-500 mr-4 text-xl w-8 text-center">
+                        <i class="fa-solid fa-broom"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-gray-800 text-md">Limpieza + Pasta Térmica</h3>
+                    </div>
+                    <div class="text-right">
+                        <span class="block text-xl font-extrabold text-purple-600">$20.000</span>
+                    </div>
+                </div>
+
+                <!-- Servicio 4 -->
+                <div class="service-card flex items-center bg-gray-50 border-l-4 border-orange-500 rounded-lg p-3 group hover:bg-white hover:shadow-md transition-all">
+                    <div class="text-orange-500 mr-4 text-xl w-8 text-center">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-gray-800 text-md">Diagnóstico y Problemas</h3>
+                        <span class="text-[10px] text-gray-400 font-bold uppercase block -mt-1">Desde</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="block text-xl font-extrabold text-orange-500">$$$$$$</span>
+                    </div>
+                </div>
+
+                <!-- Servicio 5 -->
+                <div class="service-card flex items-center bg-gray-50 border-l-4 border-pink-500 rounded-lg p-3 group hover:bg-white hover:shadow-md transition-all">
+                    <div class="text-pink-500 mr-4 text-xl w-8 text-center">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div class="flex-grow">
+                        <h3 class="font-bold text-gray-800 text-md">Creación Sitios Web</h3>
+                        <span class="text-[10px] text-gray-400 font-bold uppercase block -mt-1">Desde</span>
+                    </div>
+                    <div class="text-right">
+                        <span class="block text-xl font-extrabold text-pink-500">$$$$$$</span>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="text-center text-xs text-gray-300 mt-6">Precios sujetos a evaluación técnica.</p>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
